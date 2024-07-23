@@ -1,29 +1,20 @@
-# Testes automatizados com Cypress - Básico
+# Testes Automatizados com Cypress - Básico
 
-👋 Seja bem-vindo(a)!
+## Descrição do Projeto
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai adorar este curso. ❤️
+Este projeto tem como objetivo fornecer uma introdução aos testes automatizados utilizando o Cypress, uma ferramenta moderna e poderosa para realizar testes de front-end. O projeto cobre o básico do Cypress, incluindo configuração, escrita de testes e execução em diferentes ambientes.
 
-## O que você vai aprender
+## Pré-requisitos
 
-Durante o curso de testes automatizados com Cypress (básico), você vai aprender:
+Antes de começar, certifique-se de que você tem os seguintes pré-requisitos instalados:
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar _upload_ de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como executar os testes em um _pipeline_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
+- **Node.js**: A versão recomendada é a 18.x ou superior. Você pode baixar o Node.js [aqui](https://nodejs.org/).
+- **npm**: O gerenciador de pacotes do Node.js. Ele é instalado automaticamente com o Node.js.
+- **Git**: Para controle de versão e gerenciamento de código. Você pode baixar o Git [aqui](https://git-scm.com/).
 
-## Vamos começar?
+## Passos para Instalação das Dependências
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
+1. **Clone o Repositório**: Se você ainda não tiver o projeto, clone o repositório do GitHub:
 
-___
-
-Este é mais um curso da [**Escola Talking About Testing**](https://udemy.com/user/walmyr).
+   ```sh
+   git clone https://github.com/usuario/nome-do-repositorio.git
