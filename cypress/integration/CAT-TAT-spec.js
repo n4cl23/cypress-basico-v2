@@ -2,7 +2,8 @@
 
 describe('Central de Atendimento ao Cliente TAT', function () {
     beforeEach(function () {
-        cy.visit('../cypress-basico-v2/src/index.html')
+        cy.visit('src/index.html')
+
     });
     it('verifica o título da aplicação', function () {
         cy.title().should('eq', 'Central de Atendimento ao Cliente TAT')
@@ -158,7 +159,10 @@ describe('Central de Atendimento ao Cliente TAT', function () {
             .click()
 
         cy.url()
-            .should('include', '/cypress-basico-v2/src/privacy.html')
+            .should('include', '/src/privacy.html')
+    });
+    it('', function () {
+
     })
 
 
