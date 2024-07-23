@@ -161,12 +161,55 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.url()
             .should('include', '/src/privacy.html')
     });
-    it('', function () {
+    it('utilizando função clock e tick', function () {
+        cy.fixture('user').then((user) => {
+            cy.clock()
 
+            cy.get('#firstName').type(user.name),
+                cy.get('#lastName').type(user.sobreNome),
+                cy.get('#email').type(user.email),
+                cy.get('#open-text-area').type(user.helpText, { delay: 0 }),
+                cy.get('button[type="submit"]').click(),
+                cy.get('.success > strong').should('be.visible')
+            cy.tick(3000)
+            cy.get('.success > strong').should('not.be.visible')
+        })
+    });
+    it('exibe e esconde as mensagens de sucesso e erro usando o .invoke()', function () {
+        cy.get('.success')
+            .should('not.be.visible')
+            .invoke('show')
+            .should('be.visible')
+            .and('contain', 'Mensagem enviada com sucesso.')
+            .invoke('hide')
+            .should('not.be.visible')
+        cy.get('.error')
+            .should('not.be.visible')
+            .invoke('show')
+            .should('be.visible')
+            .and('contain', 'Valide os campos obrigatórios!')
+            .invoke('hide')
+            .should('not.be.visible')
+    });
+    it('preenche a area de texto usando o comando invoke', function () {
+        cy.fixture('user').then((user) => {
+            cy.get('#open-text-area')
+                .invoke('val', user.helpText)
+                .should('have.value', user.helpText)
+        })
+    });
+    it('faz uma requisição HTTP', function () {
+        cy.request('https://cac-tat.s3.eu-central-1.amazonaws.com/index.html')
+            .should(function (response) {
+                const { status, statusText, body } = response
+                expect(status).to.equal(200)
+                expect(statusText).to.equal('OK')
+                expect(body).to.include('CAC TAT')
+            })
+    });
+    it('encontrar o gato', function () {
+        cy.get('#cat')
+            .invoke('show')
+            .should('be.visible')
     })
-
-
-
 })
-
-
